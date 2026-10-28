@@ -10,4 +10,4 @@ import statsmodels.api as sm
 
 
 sns.set_theme()
-sns.set_context("article")
+sns.set_context("paper")
