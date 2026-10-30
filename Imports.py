@@ -9,5 +9,5 @@ from sklearn.metrics import r2_score
 import statsmodels.api as sm
 
 
-sns.set_theme()
-sns.set_context("paper")
+sns.set_theme("paper")
+# sns.set_context("paper")
