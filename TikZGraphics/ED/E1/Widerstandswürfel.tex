@@ -1,0 +1,45 @@
+
+\begin{circuitikz}[
+    european resistors,
+    % oblique 3D projection: x to the right, y up, z into the picture
+    x={(1cm,0cm)}, y={(0cm,1cm)}, z={(0.5cm,0.35cm)},
+    ]
+  \ctikzset{resistors/scale=0.75, resistors/width=0.8}
+
+  % --- cube corners (edge length 4) ---
+  \coordinate (A)  at (0,0,0);
+  \coordinate (B)  at (4,0,0);
+  \coordinate (C)  at (4,4,0);
+  \coordinate (E)  at (0,4,0);   % front, top left
+  \coordinate (F)  at (0,0,4);   % back,  bottom left
+  \coordinate (G)  at (4,0,4);   % back,  bottom right
+  \coordinate (D)  at (4,4,4);
+  \coordinate (H)  at (0,4,4);   % back,  top left
+
+  % --- front face ---
+  \draw (A) to[R] (B);
+  \draw (B) to[R] (C);
+  \draw (C) to[R] (E);
+  \draw (E) to[R] (A);
+
+  % --- back face ---
+  \draw (F) to[R] (G);
+  \draw (G) to[R] (D);
+  \draw (D) to[R] (H);
+  \draw (H) to[R] (F);
+
+  % --- edges running into the depth ---
+  \draw (A) to[R] (F);
+  \draw (B) to[R] (G);
+  \draw (C) to[R] (D);
+  \draw (E) to[R] (H);
+
+  % --- nodes ---
+  \foreach \p in {A,B,C,D,E,F,G,H}{\node[circ] at (\p) {};}
+
+  % --- labels ---
+  \node[below left]  at (A) {A};
+  \node[below right] at (B) {B};
+  \node[below left]  at (C) {C};
+  \node[above right] at (D) {D};
+\end{circuitikz}
