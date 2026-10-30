@@ -1,0 +1,15 @@
+\begin{circuitikz}[european resistors]
+  \ctikzset{bipoles/length=1.4cm, resistors/width=1.0, bipoles/resistor/height=0.3}
+
+  % wires (thick)
+  \draw[line width=1.2pt] (0,0)    -- (1.5,0);
+  \draw[line width=1.2pt] (2.9,0)  -- (4.5,0);
+  \draw[line width=1.2pt] (5.9,0)  -- (7.5,0);
+  \draw[line width=1.2pt] (8.9,0)  -- (10.4,0);
+
+  % resistors (thin outline, label inside)
+  \foreach \x/\n in {1.5/1, 4.5/2, 7.5/3}{
+    \draw[line width=0.5pt] (\x,0) to[R, name=R\n] ++(1.4,0);
+    \node at (R\n.center) {R\n};
+  }
+\end{circuitikz}

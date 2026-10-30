@@ -1,0 +1,22 @@
+\begin{circuitikz}[european resistors]
+  \ctikzset{resistors/width=0.9, bipoles/resistor/height=0.3}
+
+  % rails
+  \draw[line width=1.2pt] (0,0)  -- (10,0);
+  \draw[line width=1.2pt] (0,-3) -- (10,-3);
+
+  % left closing wire (thin)
+  \draw[line width=0.6pt] (0,0) -- (0,-3);
+
+  % resistors
+  \foreach \x/\n in {1.5/1, 4.5/2, 7.5/3}{
+    \draw[line width=0.6pt] (\x,0) to[R, name=R\n, *-*] (\x,-3);
+    \node[rotate=90] at (R\n.center) {R\n};
+  }
+
+  % thick shorting wires with nodes
+  % to ignore the code: make it commented out
+  \foreach \x in {3, 6, 9}{
+    \draw[line width=1.6pt] (\x,0) to[short, *-*] (\x,-3);
+  }
+\end{circuitikz}
